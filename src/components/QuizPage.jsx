@@ -18,7 +18,11 @@ const QuizPage = ({ questions, onSubmit }) => {
 
 
     // }, [selectedAnswers, currentQuestionIndex])
-
+    // console.log(selectedAnswers,"selectedanser")
+    const name = localStorage.getItem("name");
+    if (!name) {
+        setSelectedAnswers([]);
+    }
     useEffect(() => {
         if (selectedAnswers[currentQuestionIndex].length > 0) {
             if (visitedQuestions.includes(currentQuestionIndex)) {

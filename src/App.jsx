@@ -81,7 +81,7 @@ const App = () => {
     if (confirmSubmit) {
     setQuizCompleted(true);
     const storedSelectedAnswers = localStorage.getItem('selectedAnswers');
-    setUserAnswers(storedSelectedAnswers ? JSON.parse(storedSelectedAnswers) : new Array(formattedQuestions.length).fill(''));
+    setUserAnswers(storedSelectedAnswers ? JSON.parse(storedSelectedAnswers) : new Array(questions?.length).fill(''));
     }else{
     return '';
     }
