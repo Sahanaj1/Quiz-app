@@ -5,9 +5,8 @@ const StartPage = ({ onStart }) => {
   const [name, SetName] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
-    onStart(email, name); // Pass both email and name to the onStart function
+    onStart(email, name); 
 
-  // Store email and name in localStorage
   localStorage.setItem('email', email);
   localStorage.setItem('name', name);
   };

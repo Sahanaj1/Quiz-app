@@ -13,7 +13,6 @@ const App = () => {
   const [quizCompleted, setQuizCompleted] = useState(false);
 
   useEffect(() => {
-    // Fetch questions from API and set the state
     fetch('https://opentdb.com/api.php?amount=15')
       .then((response) => response.json())
       .then((data) => {
@@ -62,7 +61,7 @@ const App = () => {
     }
   };
 
-  console.log(userAnswers,"useranswer")
+  // console.log(userAnswers,"useranswer")
   const name = localStorage.getItem('name');
   const emailstored = localStorage.getItem('email');
   return (

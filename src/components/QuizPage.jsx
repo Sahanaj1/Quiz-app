@@ -11,27 +11,24 @@ const QuizPage = ({ questions, onSubmit }) => {
     // const [quizCompleted, setQuizCompleted] = useState(false);
     // console.log(onSubmit, "onsubmit")
 
-    useEffect(() => {
-        console.log(selectedAnswers, "selectedAnswers")
-        console.log(visitedQuestions, "visitedQuestions")
-        console.log(attemptedQuestions, "attemptedQuestions")
+    // useEffect(() => {
+    //     console.log(selectedAnswers, "selectedAnswers")
+    //     console.log(visitedQuestions, "visitedQuestions")
+    //     console.log(attemptedQuestions, "attemptedQuestions")
 
 
-    }, [selectedAnswers, currentQuestionIndex])
+    // }, [selectedAnswers, currentQuestionIndex])
 
     useEffect(() => {
         if (selectedAnswers[currentQuestionIndex].length > 0) {
-            // Check if the question was previously marked as visited
             if (visitedQuestions.includes(currentQuestionIndex)) {
                 setVisitedQuestions(visitedQuestions.filter(index => index !== currentQuestionIndex));
             }
-            // Push the question index to attemptedQuestions
             setAttemptedQuestions((prevAttemptedQuestions) => [
                 ...prevAttemptedQuestions,
                 currentQuestionIndex
             ]);
         } else {
-            // Push the question index to visitedQuestions
             setVisitedQuestions([...visitedQuestions, currentQuestionIndex]);
         }
     }, [selectedAnswers, currentQuestionIndex]);
@@ -61,7 +58,6 @@ const QuizPage = ({ questions, onSubmit }) => {
         setCurrentQuestionIndex(questionIndex);
     };
 
-    // Timer functionality
     const [timeRemaining, setTimeRemaining] = useState(30 * 60);
     const timerWidth = `${(timeRemaining / (30 * 60)) * 100}%`;
     useEffect(() => {
@@ -107,7 +103,7 @@ const QuizPage = ({ questions, onSubmit }) => {
                                     className={`h-6 w-6  lg:h-10 lg:w-10 text-xs font-semibold lg:text-sm rounded-full flex items-center justify-center cursor-pointer ${visitedQuestions.includes(index) ? 'bg-yellow-100' : ''} ${attemptedQuestions.includes(index) ? 'bg-green-300' : 'bg-gray-100'}`}
                                     onClick={() => handleQuestionNavigation(index)}
                                 >
-                                    {console.log(attemptedQuestions?.includes(index))}
+                                    {/* {console.log(attemptedQuestions?.includes(index))} */}
                                     {index + 1}
                                 </span>
                             ))}

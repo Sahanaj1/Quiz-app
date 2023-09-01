@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 
 const Question = ({ question, choices, onSelect, selectedAnswer, questionNumber }) => {
-  useEffect(() => {
-    console.log(questionNumber - 1, 'questionNumber');
-  }, [questionNumber]);
+  // useEffect(() => {
+  //   console.log(questionNumber - 1, 'questionNumber');
+  // }, [questionNumber]);
 
   return (
     <div className="w-full">
@@ -24,7 +24,7 @@ const Question = ({ question, choices, onSelect, selectedAnswer, questionNumber 
                 name={`question-${questionNumber}-answer`}
                 value={choice}
                 checked={selectedAnswer === choice}
-                onChange={() => onSelect(choice)} // Pass true if an answer is selected, false otherwise
+                onChange={() => onSelect(choice)} 
                 className="hidden"
               />
               {choice}
