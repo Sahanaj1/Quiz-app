@@ -6,8 +6,9 @@ const Question = ({ question, choices, onSelect, selectedAnswer, questionNumber 
   // }, [questionNumber]);
 
   return (
-    <div className="w-full">
-      <h2 className="text-sm lg:text-[18px] font-semibold text-blue-600">Question {questionNumber + 1}</h2>
+    <div className="w-full min-h-[50vh] lg:min-h-0">
+      
+      <h2 className="text-sm lg:text-[18px] font-semibold text-blue-600 py-0 lg:py-4">Question {questionNumber + 1}</h2>
       <p className="text-[18px] lg:text-xl font-semibold">{question}</p>
       <div className="mt-4">
         {choices.map((choice, index) => (
